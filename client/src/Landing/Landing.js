@@ -21,7 +21,7 @@ export default function Landing() {
           <div style={{ marginLeft: "5vw", fontSize: "1.5rem", color: "white", fontWeight: "500", marginTop: "15vh" }}>Easily track your financial goals and progress.</div>
         </div>
         <div style={{width: "50vw", display:"flex", justifyContent: "center", alignItems: "center"}}>
-          <img src={Graph} style={{height: "60%"}} />
+          <img src={Graph} style={{height: "60%"}} alt="Graph" />
         </div>
       </div>
 
