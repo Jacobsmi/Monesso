@@ -1,6 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Graph from "./Graph.svg";
+import DollarSign from "./DollarSign.svg";
+import Line from "./Line.svg";
+import MoneyBag from "./MoneyBag.svg";
 
 export default function Landing() {
   return (
@@ -17,7 +20,7 @@ export default function Landing() {
           alignItems: "center"
         }}
       >
-        <Typography variant="h4" color="white" flexGrow="1">Monesso</Typography>
+        <Typography variant="h4" color="white" flexGrow="1" sx={{marginLeft: "20px"}}>Monesso</Typography>
         <Button variant="outlined" color="secondary" sx={{ marginRight: "20px" }} component={Link} to="/signin">Sign In</Button>
         <Button variant="contained" color="secondary" sx={{ marginRight: "20px" }} component={Link} to="/signup">Get Started</Button>
       </Box>
@@ -58,7 +61,84 @@ export default function Landing() {
         </Box>
 
       </Box>
+      <Box
+        sx={{
+          height: "20%",
+          display: "flex",
+          alignItems: "center", 
+          justifyContent: "center"
+        }}
+      >
+        <Box
+          sx={{
+            borderRight: "1px solid black",
+            width: "20%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "60%"
+          }}
+        >
+          <Typography sx={{
+            padding: "2%",
+            width: "80%",
+            textAlign: "center"
+          }}>Learn more about our features</Typography>
+        </Box>
 
+        <Box
+          sx={{
+            borderRight: "1px solid black",
+            width: "20%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+
+          }}
+        >
+          <img src={DollarSign} height="30px" alt="Dollar Sign" />
+          <Typography sx={{
+            padding: "2%",
+            width: "80%",
+            textAlign: "center"
+          }}>Track your savings and spending</Typography>
+        </Box>
+
+        <Box
+          sx={{
+            borderRight: "1px solid black",
+            width: "20%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+
+          }}
+        >
+          <img src={Line} height="30px" alt="Graph line going up" />
+          <Typography sx={{
+            padding: "2%",
+            width: "80%",
+            textAlign: "center"
+          }}>View your investment portfolio</Typography>
+        </Box>
+        <Box
+          sx={{
+            width: "20%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+
+          }}
+        >
+          <img src={MoneyBag} height="30px" alt="Graph line going up" />
+          <Typography sx={{
+            padding: "2%",
+            width: "80%",
+            textAlign: "center"
+          }}>Create savings goals and monitor them</Typography>
+        </Box>
+      </Box>
     </Box>
   )
 }
