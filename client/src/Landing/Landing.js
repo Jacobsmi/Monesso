@@ -1,53 +1,64 @@
-import "./Landing.css";
-import GraphLine from "./graphline.svg";
-import DollarSign from "./dollarsign.svg";
-import MoneyBag from "./moneybag.svg";
-import Graph from "./graph.svg";
+import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import Graph from "./Graph.svg";
 
 export default function Landing() {
   return (
-    <div className="Landing">
+    <Box sx={{
+      height: "100vh",
+      width: "100vw",
+      minHeight: "600px"
+    }}>
+      <Box
+        sx={{
+          height: "10%",
+          bgcolor: "primary.main",
+          display: "flex",
+          alignItems: "center"
+        }}
+      >
+        <Typography variant="h4" color="white" flexGrow="1">Monesso</Typography>
+        <Button variant="outlined" color="secondary" sx={{ marginRight: "20px" }} component={Link} to="/signin">Sign In</Button>
+        <Button variant="contained" color="secondary" sx={{ marginRight: "20px" }} component={Link} to="/signup">Get Started</Button>
+      </Box>
 
-      <div className="Landing-TopBar">
-        <div className="Landing-TopBar-Logo">Monesso</div>
-        <Link to="/signup" className="Landing-TopBar-Link">Sign Up</Link>
-        <Link to="/login" className="Landing-TopBar-Link">Login</Link>
-      </div>
+      <Box
+        sx={{
+          height: "70%",
+          bgcolor: "primary.main",
+          display: "flex",
+        }}
+      >
 
-      <div className="Landing-Body">
-        <div style={{width: "50vw"}}>
-          <div style={{ marginLeft: "5vw", fontSize: "3rem", color: "white", fontWeight: "600", marginTop: "15vh" }}>Finance Made Easy</div>
-          <div style={{ marginLeft: "5vw", fontSize: "1.5rem", color: "white", fontWeight: "500", marginTop: "15vh" }}>Easily track your financial goals and progress.</div>
-        </div>
-        <div style={{width: "50vw", display:"flex", justifyContent: "center", alignItems: "center"}}>
-          <img src={Graph} style={{height: "60%"}} alt="Graph" />
-        </div>
-      </div>
+        <Box
+          sx={{
+            height: "80%",
+            width: "45vw",
+            marginLeft: "5vw",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
 
-      <div className="Landing-Footer" style={{position: "static"}}>
-        <div className="Landing-Footer-Box" style={{ fontSize: "1.5rem", paddingRight: "5rem", textAlign: "left" }}>
-          Learn more about our features
-        </div>
-        <div className="Landing-Footer-Box">
-          <div className="Landing-Footer-Box-Icon">
-            <img src={DollarSign} alt="Dollar Sign" />
-          </div>
-        Track your savings and spending
-        </div>
-        <div className="Landing-Footer-Box">
-          <div className="Landing-Footer-Box-Icon">
-            <img src={GraphLine} alt="Graph Line" />
-          </div>
-          View your investment portfolio
-        </div>
-        <div className="Landing-Footer-Box" style={{ borderRight: "none" }}>
-          <div className="Landing-Footer-Box-Icon">
-            <img src={MoneyBag} alt="Money Bag" />
-          </div>
-          Create savings goals and monitor them
-        </div>
-      </div>
-    </div>
+          }}
+        >
+          <Typography variant="h3" color="white">Finance made easy</Typography>
+          <Typography variant="h5" color="white">Easily track your financial goals and progress.</Typography>
+        </Box>
+
+        <Box
+          sx={{
+            height: "100%",
+            width: "50vw",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <img src={Graph} height="60%" alt="Graph going up" />
+        </Box>
+
+      </Box>
+
+    </Box>
   )
 }
